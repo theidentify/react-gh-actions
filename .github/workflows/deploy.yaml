@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest  
     steps:
+      - name: Print Foo variables
+        run: echo "Foo variables: ${{ vars.FOO }}"
+      - name: Print API Key
+        run: echo "Api Key: ${{ secrets.API_KEY }}"
       - name: Clone repo
         uses: actions/checkout@v5
       - name: Get npm cache directory

@@ -9,6 +9,7 @@ on:
       - opened
 jobs:
   lint:
+    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Clone repo

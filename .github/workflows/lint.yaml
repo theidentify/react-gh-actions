@@ -1,0 +1,19 @@
+name: Lint
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v5
+      - name: Install deps
+        run: npm i
+      - name: Lint
+        run: npm run lint

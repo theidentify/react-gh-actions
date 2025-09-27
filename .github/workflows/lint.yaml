@@ -12,6 +12,10 @@ jobs:
     environment: testing
     runs-on: ubuntu-latest
     steps:
+      - name: Print Foo variables
+        run: echo "dev:${{ vars.FOO }}"
+      - name: Print API Key
+        run: echo "Api Key:${{ secrets.API_KEY }}"
       - name: Clone repo
         uses: actions/checkout@v5
       - name: Install deps

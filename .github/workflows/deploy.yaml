@@ -42,8 +42,7 @@ jobs:
         with:
           name: dist-folder
           path: dist/
-      - name: Force Fail
-        run: exit 1;
+
   deploy:
     if: success()
     runs-on: ubuntu-latest
@@ -59,7 +58,7 @@ jobs:
         run: echo "Deploying..."
 
   notify:
-    if: failure()
+    if: always()
     runs-on: ubuntu-latest
     needs:
       - build
@@ -70,4 +69,4 @@ jobs:
           DISCORD_WEBHOOK: https://discordapp.com/api/webhooks/1421349019224903712/GDlAsXm361j7yJLu8cXpD0xRCmHVTCJZKS6zids7AxYvpPk-htSuUTM4iMtmb7-ReiQI
         uses: Ilshidur/action-discord@master
         with:
-          args: 'Build failed by Krisb'
+          args: 'Build ${{ github.ref_name }}${{ github.sha }} by Krisb'

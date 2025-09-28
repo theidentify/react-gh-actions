@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - features/**
   workflow_dispatch:
   pull_request:
     types:

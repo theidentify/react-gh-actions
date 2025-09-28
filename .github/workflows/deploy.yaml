@@ -12,7 +12,7 @@ jobs:
         NODE_ENV: prod
     steps:
       - name: Install and Cache
-        uses: .github/actions/install-cache
+        uses: ./.github/actions/install-cache
       - name: Build
         run: npm run build
       - name: List dist/

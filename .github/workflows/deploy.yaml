@@ -12,6 +12,10 @@ jobs:
   build:
     environment: prod
     runs-on: ubuntu-latest
+    container:
+      image: node:22-slim
+      env:
+        NODE_ENV: production
     steps:
       - name: Print Foo variables
         run: echo "dev:\ ${{ vars.FOO }}"

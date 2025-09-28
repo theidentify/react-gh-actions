@@ -15,7 +15,7 @@ jobs:
     container:
       image: node:22-slim
       env:
-        NODE_ENV: production
+        NODE_ENV: prod
     steps:
       - name: Print Foo variables
         run: echo "dev:\ ${{ vars.FOO }}"

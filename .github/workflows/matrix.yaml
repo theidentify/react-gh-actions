@@ -1,0 +1,13 @@
+name: Matrix
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: ["20", "22", "24"]
+        browser: ["firefox", "chrome", "safari"]
+    steps:
+      - name: Print Node version and test Browser
+        run: echo "${{ matrix.node_version }} - ${{ matrix.browser }}"

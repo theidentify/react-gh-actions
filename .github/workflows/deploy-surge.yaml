@@ -1,4 +1,4 @@
-name: Deploy React CSR
+name: Deploy React CSR to Surge
 on:
   push:
   workflow_dispatch:

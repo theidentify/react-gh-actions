@@ -6,10 +6,6 @@ jobs:
   build:
     environment: prod
     runs-on: ubuntu-latest
-    container:
-      image: node:22-slim
-      env:
-        NODE_ENV: prod
     steps:
       - name: Clone repo
         uses: actions/checkout@v5

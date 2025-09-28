@@ -70,7 +70,7 @@ jobs:
     steps:
       - name: Notify to Discord Text Channel
         env:
-          DISCORD_WEBHOOK: https://discordapp.com/api/webhooks/1421349019224903712/GDlAsXm361j7yJLu8cXpD0xRCmHVTCJZKS6zids7AxYvpPk-htSuUTM4iMtmb7-ReiQI
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
           args: 'Build Success ✅ - ${{ github.ref_name }}@${{ github.sha }} by ${{ github.actor }}'
@@ -84,7 +84,7 @@ jobs:
     steps:
       - name: Notify to Discord Text Channel
         env:
-          DISCORD_WEBHOOK: https://discordapp.com/api/webhooks/1421349019224903712/GDlAsXm361j7yJLu8cXpD0xRCmHVTCJZKS6zids7AxYvpPk-htSuUTM4iMtmb7-ReiQI
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
           args: 'Build Failed ⚠️ - ${{ github.ref_name }}@${{ github.sha }} by ${{ github.actor }}'

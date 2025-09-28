@@ -8,6 +8,14 @@ jobs:
       matrix:
         node_version: ["20", "22", "24"]
         browser: ["firefox", "chrome", "safari"]
+        exclude:
+          - node_version: "20"
+            browser: "safari"
+        include:
+          - node_version: "21"
+            browser: "edge"
+          - node_version: "18"
+            browser: "safari"
     steps:
       - name: Print Node version and test Browser
         run: echo "${{ matrix.node_version }} - ${{ matrix.browser }}"

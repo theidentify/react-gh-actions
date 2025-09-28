@@ -3,7 +3,7 @@ description: Install deps and caching
 inputs:
   node-version:
     description: node version
-    require: false
+    required: false
     default: 22
 runs:
   using: composite
